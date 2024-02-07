@@ -1,0 +1,35 @@
+.heroImg {
+  width: 352px;
+  height: 540px;
+}
+
+.heroCaption {
+  font-size: 18px;
+  color: #cdcccc;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-size: 80px;
+  color: #fafafa;
+  width: 538px;
+  font-weight: 500;
+  line-height: 1em;
+}
+
+.heroDesc {
+  font-size: 16px;
+  color: #fafafa;
+  width: 527px;
+  font-weight: 400;
+}
+
+.heroBtn {
+  background-color: #34387f;
+  color: #fafafa;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 100px;
+  cursor: pointer;
+}

@@ -9,13 +9,16 @@
   padding: 12px 24px;
   border-radius: 100px;
   cursor: pointer;
+  font-size: 14px;
+    text-transform: uppercase;
+    color: #fafafa;
 }
 
-.searchText {
+/* .searchText {
   font-size: 14px;
   text-transform: uppercase;
   color: #fafafa;
-}
+} */
 
 .searchIcon {
 margin-right: 8px;
