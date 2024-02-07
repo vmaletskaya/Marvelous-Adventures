@@ -1,0 +1,22 @@
+.searchBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+
+  border: 1px solid #989797;
+
+  padding: 12px 24px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.searchText {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+
+.searchIcon {
+margin-right: 8px;
+}
