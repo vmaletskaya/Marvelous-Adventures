@@ -1,12 +1,13 @@
-.heroImg {
+/* .heroImg {
   width: 352px;
   height: 540px;
-}
+} */
 
 .heroCaption {
   font-size: 18px;
   color: #cdcccc;
   text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
 .heroTitle {
@@ -15,6 +16,7 @@
   width: 538px;
   font-weight: 500;
   line-height: 1em;
+  margin-bottom: 16px;
 }
 
 .heroDesc {
@@ -22,6 +24,7 @@
   color: #fafafa;
   width: 527px;
   font-weight: 400;
+  margin-bottom: 32px;
 }
 
 .heroBtn {
@@ -32,4 +35,54 @@
   padding: 12px 24px;
   border-radius: 100px;
   cursor: pointer;
+}
+
+.container{
+  margin-top: 100px;
+  margin-left: 32px;
+}
+
+.wrapper{
+  display: flex;
+ 
+}
+
+   .wrapperImg{
+  display: flex;
+    position: absolute;
+      top: 0;
+      right: 0;
+}    
+
+
+.heroImg{
+
+  width: 352px;
+  height: 540px;
+}
+
+.heroImg1{
+  margin-top: 200px;
+margin-right: 32px;
+  width: 352px;
+  height: 540px;
+}
+
+
+.imgCaption{
+  color: #FAFAFA;
+  font-size: 12px;
+
+}
+
+.imgDesc{
+  color:#a7a3a3;
+  font-size: 12px;
+  width: 195px;
+}
+
+
+.rightWrapper{
+  display: flex;
+  gap: 60px;
 }
