@@ -1,9 +1,5 @@
-/* .heroImg {
-  width: 352px;
-  height: 540px;
-} */
-
 .heroCaption {
+  width: 198px;
   font-size: 18px;
   color: #cdcccc;
   text-transform: uppercase;
@@ -30,59 +26,107 @@
 .heroBtn {
   background-color: #34387f;
   color: #fafafa;
-  font-size: 14px;
+
   text-transform: uppercase;
   padding: 12px 24px;
-  border-radius: 100px;
+  border: none;
+  border-radius: 1000px;
   cursor: pointer;
+  width: 131px;
+  line-height: 18px;
 }
 
-.container{
-  margin-top: 100px;
-  margin-left: 32px;
-}
-
-.wrapper{
+.container {
+  margin-left: 38px;
   display: flex;
- 
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 146px;
+  width: 100%;
+  width: 538px;
 }
 
-   .wrapperImg{
+.wrapperImg {
   display: flex;
-    position: absolute;
-      top: 0;
-      right: 0;
-}    
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: row;
+  gap: 32px;
+  justify-content: flex-end;
+  height: 117%;
+}
 
-
-.heroImg{
-
+.heroImg {
   width: 352px;
   height: 540px;
+  align-self: flex-start;
 }
 
-.heroImg1{
-  margin-top: 200px;
-margin-right: 32px;
-  width: 352px;
-  height: 540px;
+.heroImg1 {
+  /* margin-top: 200px; */
+  align-self: flex-end;
 }
 
-
-.imgCaption{
-  color: #FAFAFA;
+.imgCaption {
+  color: #fafafa;
   font-size: 12px;
-
 }
 
-.imgDesc{
-  color:#a7a3a3;
+.imgDesc {
+  color: #a7a3a3;
   font-size: 12px;
   width: 195px;
 }
 
-
-.rightWrapper{
-  display: flex;
+.cardRightBottom {
   gap: 60px;
+  border-top: 2px solid #898686;
+  display: flex;
+  margin-top: 16px;
+  padding-top: 16px;
+  position: absolute;
+  margin-right: 32px;
+  z-index: 3;
+  width: 320px;
+  top: 572px;
 }
+
+.pagination {
+  bottom: 0;
+  top: 250px;
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  height: 4px;
+  position: absolute;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+  transform: rotate(90deg) translateX(50%);
+  width: 328px;
+  z-index: 25;
+}
+
+.pageEl {
+  background-color: #171717b3;
+  cursor: pointer;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.cardRightBottom::before {
+  color: #898686;
+  display: block;
+  font-size: 6px;
+  mix-blend-mode: exclusion;
+  position: absolute;
+  top: -4px;
+  z-index: 2;
+  content: '▶';
+  left: 0;
+}
+/* 
+.cardRightBottom::after{
+content: "◀";
+  right: 0;
+} */

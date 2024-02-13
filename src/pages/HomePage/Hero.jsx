@@ -5,12 +5,10 @@ import css from './Hero.module.css';
 import MarvelousHero from '../../images/pantera.svg';
 import MarvelousHero1 from '../../images/pantera1.svg';
 
-
 const Hero = () => {
   return (
-    <div className={css.wrapper}>
-     
-      <div className={css.container}>
+   <>
+      <article className={css.container}>
         <p className={css.heroCaption}>Web-based platform</p>
         <h1 className={css.heroTitle}>Marvelous Adventures</h1>
         <p className={css.heroDesc}>
@@ -21,37 +19,27 @@ const Hero = () => {
           today.
         </p>
         <button className={css.heroBtn}>All comics</button>
-      </div>
+      </article>
       <div className={css.pagination}>
         <div className={css.pageEl}></div>
         <div className={css.pageEl}></div>
         <div className={css.pageEl}></div>
       </div>
-      
-        <div className={css.wrapperImg}>
-        <img
-          src={MarvelousHero}
-          alt="Black Panther"
-          className={css.heroImg1}
-        />
-        
-          <img
-            src={MarvelousHero1}
-            alt="Black Panther"
-            className={css.heroImg}
-          />
-      </div>
-      <div className={css.rightWrapper}>
-         <p className= {css.imgCaption}>Characters</p>
+
+      <div className={css.wrapperImg}>
+        <img src={MarvelousHero} alt="Black Panther" className={css.heroImg1} />
+
+        <img src={MarvelousHero1} alt="Black Panther" className={css.heroImg} />
+        <div className={css.cardRightBottom}>
+           <p className={css.imgCaption}>Characters</p>
         <p className={css.imgDesc}>
           T’Challa is the king of the secretive and highly advanced African
           nation of Wakanda - as well as the powerful warrior known as the Black
           Panther.
         </p>
+       </div>
       </div>
-       
-      
-    </div>
+   </>
   );
 };
 
