@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Logo from 'elements/Logo/Logo';
 import SearchBar from 'elements/SearchBar/SearchBar';
 import css from './Header.module.css'

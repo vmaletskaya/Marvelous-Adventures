@@ -54,7 +54,7 @@
   flex-direction: row;
   gap: 32px;
   justify-content: flex-end;
-  height: 117%;
+  height: 780px;
 }
 
 .heroImg {
@@ -64,8 +64,9 @@
 }
 
 .heroImg1 {
-  /* margin-top: 200px; */
-  align-self: flex-end;
+  /* margin-top: 200px;  */
+ align-self: flex-end; 
+height: 540px;
 }
 
 .imgCaption {
@@ -100,7 +101,7 @@
   gap: 14px;
   height: 4px;
   position: absolute;
-  right: 50%;
+  right: 46%;
   -webkit-transform: translateX(50%);
   transform: rotate(90deg) translateX(50%);
   width: 328px;
@@ -120,13 +121,20 @@
   font-size: 6px;
   mix-blend-mode: exclusion;
   position: absolute;
-  top: -4px;
+  top: -6px;
   z-index: 2;
   content: '▶';
   left: 0;
 }
-/* 
-.cardRightBottom::after{
-content: "◀";
+
+.cardRightBottom::after {
+  content: '◀';
   right: 0;
-} */
+  color: #898686;
+  display: block;
+  font-size: 6px;
+  mix-blend-mode: exclusion;
+  position: absolute;
+  top: -6px;
+  z-index: 2;
+}

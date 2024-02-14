@@ -1,0 +1,12 @@
+.titleBlock {
+  font-size: 44px;
+  color: #fafafa;
+  line-height: 44px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.container {
+  margin-top: 300px;
+  margin-left: 32px;
+}
