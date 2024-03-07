@@ -10,9 +10,32 @@ const LastComics = ({ onItemClick }) => {
 
   useEffect(() => {
     fetchComics()
-      .then(data => setItems(data.results)) 
+      .then(data => {
+        const validComics = data.results.filter(comic => 
+          comic.thumbnail && 
+          comic.thumbnail.path && 
+          comic.thumbnail.extension && 
+          comic.title && 
+          comic.creators &&
+          comic.creators.items && 
+          comic.creators.items.length > 1 
+        );
+
+        // Удаляем дубликаты
+        const uniqueComics = validComics.reduce((acc, current) => {
+          const x = acc.find(item => item.id === current.id);
+          if (!x) {
+            return acc.concat([current]);
+          } else {
+            return acc;
+          }
+        }, []);
+
+        setItems(uniqueComics); 
+      })
       .catch(error => console.error(error));
   }, []);
+
 
   return (
     <div className={css.container}>
