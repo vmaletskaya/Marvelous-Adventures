@@ -10,3 +10,13 @@
   margin-top: 300px;
   margin-left: 32px;
 }
+
+.comicsList{
+  margin-top: 64px;
+display: flex;
+  overflow-x: auto; 
+  gap: 16px;
+ 
+}
+
+

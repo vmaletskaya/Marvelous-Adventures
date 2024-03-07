@@ -1,0 +1,20 @@
+.image{
+    width: 448px;
+    height:519px;
+    border-radius: 8px;
+}
+
+.title {
+    font-size: 24px;
+    color: #FAFAFA;
+    font-weight: 500;
+}
+
+.authors{
+    font-size: 18px;
+    color: #878484;
+}
+
+.details{
+    padding-top: 16px;
+}
