@@ -5,15 +5,28 @@
 
 
 body {
+
   margin: 0;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  
+    -webkit-user-select: none;
+
+    -moz-user-select: none;
+
+    -ms-user-select: none;
+ 
+    user-select: none;
+  
 
   font-weight: 400;
   background-color: black;
   will-change: transform, scale;
 }
+
+ 
 
 html::-webkit-scrollbar {
   display: none;

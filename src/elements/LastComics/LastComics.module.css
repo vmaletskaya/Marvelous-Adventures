@@ -7,20 +7,60 @@
 }
 
 .container {
+  padding: 64px;
   margin-top: 300px;
-  margin-left: 32px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.comicsList{
+.titleBlock {
+  margin-bottom: 16px;
+}
+
+.cardContainer {
+  flex: 0 0 calc(33.33% - 16px);
+  margin-right: 16px;
+  max-width: calc(33.33% - 16px);
+}
+
+.comicsList {
   margin-top: 64px;
-display: flex;
-  overflow-x: auto; 
-  gap: 16px;
- 
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 32px;
 }
 
+.comicsList::-webkit-scrollbar {
+  display: none;
+}
 
-.item {
-  flex: 0 0 auto;
-  /* Элементы не будут растягиваться или сжиматься */
+.button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #34387f;
+  border: none;
+  cursor: pointer;
+  margin-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
+
+.btnContainer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.button img {
+  width: 24px;
+  height: 24px;
 }

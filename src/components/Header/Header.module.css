@@ -1,15 +1,12 @@
-.header{
-
-        align-items: center;
-            display: flex;
-            justify-content: space-between;
-            left: 50%;
-            position: absolute;
-            top: 0;
-            transform: translateX(-50%);
-            width: 95%;
-            z-index: 35;
-            padding: 24px 32px;
-  
-        
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 92%;
+  z-index: 35;
+  padding: 24px 0;
 }

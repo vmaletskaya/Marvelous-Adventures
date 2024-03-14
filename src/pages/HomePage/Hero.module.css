@@ -37,7 +37,7 @@
 }
 
 .container {
-  margin-left: 38px;
+  margin-left: 64px;
   display: flex;
   flex-direction: column;
   gap: 16px;

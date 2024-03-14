@@ -1,10 +1,9 @@
-// ComicsCard.js
 import React from 'react';
 
 import css from './ComicsCard.module.css';
 
 const ComicsCard = ({ image, title, authors, onClick }) => {
-  const MAX_AUTHORS = 3; // Максимальное количество авторов для отображения
+  const MAX_AUTHORS = 3; 
   const displayedAuthors = authors.slice(0, MAX_AUTHORS);
   const otherAuthorsCount = authors.length - MAX_AUTHORS;
 
@@ -15,7 +14,7 @@ const ComicsCard = ({ image, title, authors, onClick }) => {
         <h3 className={css.title}>{title}</h3>
         <p className={css.authors}>
           {displayedAuthors.join(', ')}
-          {otherAuthorsCount > 0 && `... и еще ${otherAuthorsCount}`}
+          {otherAuthorsCount > 0 && `... and ${otherAuthorsCount}`}
         </p>
       </div>
     </li>
