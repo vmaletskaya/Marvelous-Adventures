@@ -11,7 +11,7 @@ const fetchComics = async () => {
   const hashInput = ts + privateKey + publicKey;
   const hash = md5(hashInput);
 
-  const BASE_URL = 'http://gateway.marvel.com/v1/public';
+  const BASE_URL = 'https://gateway.marvel.com/v1/public';
 
  
   const dateRange = '2022-01-01T00:00:00Z,2022-12-31T23:59:59Z';
