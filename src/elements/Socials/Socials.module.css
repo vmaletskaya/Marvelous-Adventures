@@ -1,0 +1,28 @@
+.socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.elements {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+        justify-content: center;
+    border-radius: 6px;
+    border: 1px solid #4b4b4b90;
+    
+}
+
+.icons {
+    width: 40%;
+    object-fit: contain;
+    will-change: transform;
+    transition: transform 0.2s ease
+}
+

@@ -5,6 +5,7 @@ import Header from './Header/Header';
 import Hero from '../pages/HomePage/Hero';
 import LastComics from '../elements/LastComics/LastComics';
 import ComicsCard from '../elements/ComicsCard/ComicsCard';
+import Footer from './Footer/Footer';
 
 export const App = () => {
   const [comics, setComics] = useState([]);
@@ -34,6 +35,7 @@ export const App = () => {
           />
         ))}
       </LastComics>
+      <Footer />
     </div>
   );
 };
