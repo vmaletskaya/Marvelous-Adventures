@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import css from './Hero.module.css';
 
 import MarvelousHero from '../../../images/pantera.svg';
@@ -18,7 +18,9 @@ const Hero = () => {
           our Characters and Comics sections and discover your new favorites
           today.
         </p>
-        <button className={css.heroBtn}>All comics</button>
+        <button className={css.heroBtn}>
+           <Link to="/all-comics" className={css.link}>All comics</Link> 
+        </button>
       </article>
       <div className={css.pagination}>
         <div className={css.pageEl}></div>

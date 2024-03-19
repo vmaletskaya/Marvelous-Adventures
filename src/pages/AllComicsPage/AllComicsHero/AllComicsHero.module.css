@@ -1,0 +1,55 @@
+.hero {
+    background: linear-gradient(91deg, rgba(12, 11, 11, 0.1) 78.74%, #0c0b0b 96%),
+        linear-gradient(2deg, #0c0b0b 2.15%, rgba(12, 11, 11, 0.1) 32.65%),
+        linear-gradient(84deg, #0c0b0b 4.87%, rgba(12, 11, 11, 0.1) 15.93%),
+        linear-gradient(180deg, #0c0b0b 0%, rgba(12, 11, 11, 0.1) 72.35%),
+        url('../../../images/avengers-marvel\ 1.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+background-position: center;
+    background-blend-mode: multiply;
+
+    height: 780px;
+    width: 93%;
+    color: white;
+    font-size: 64px;
+    padding-left: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 830px;
+}
+
+.about {
+  color: #ffffffb3;
+  font-size: 18px;
+  text-transform: uppercase;
+  z-index: 10;
+  line-height: 160%;
+}
+
+.title {
+  font-size: 150px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -1.2px;
+}
+
+.description {
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+  width: 469px;
+  left: 88px;
+  line-height: 20px;
+  letter-spacing: 0.32px;
+}

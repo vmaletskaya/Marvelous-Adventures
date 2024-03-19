@@ -34,7 +34,18 @@
   cursor: pointer;
   width: 131px;
   line-height: 18px;
+  transition: transform 0.3s ease;
 }
+
+.heroBtn:is(:hover, :active) {
+  transform: scale(1.1);
+}
+
+.link{
+    color: #fafafa;
+      text-decoration: none;
+}
+
 
 .container {
   margin-left: 64px;
