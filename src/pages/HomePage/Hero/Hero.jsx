@@ -2,8 +2,8 @@ import React from 'react';
 
 import css from './Hero.module.css';
 
-import MarvelousHero from '../../images/pantera.svg';
-import MarvelousHero1 from '../../images/pantera1.svg';
+import MarvelousHero from '../../../images/pantera.svg';
+import MarvelousHero1 from '../../../images/pantera1.svg';
 
 const Hero = () => {
   return (

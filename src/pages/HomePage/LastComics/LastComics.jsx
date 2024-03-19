@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ComicsCard from 'elements/ComicsCard/ComicsCard';
-import fetchComics from '../../helpers/api';
-import BtnIcon1 from '../../images/arrow-left.svg';
-import BtnIcon2 from '../../images/arrow-right.svg';
+import fetchComics from '../../../helpers/api';
+import BtnIcon1 from '../../../images/arrow-left.svg';
+import BtnIcon2 from '../../../images/arrow-right.svg';
 
 import css from './LastComics.module.css';
 
@@ -98,3 +98,15 @@ const LastComics = ({ onItemClick }) => {
 };
 
 export default LastComics;
+
+
+//  <LastComics>
+//         {comics.map(comic => (
+//           <ComicsCard
+//             key={comic.id}
+//             image={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+//             title={comic.title}
+//             authors={comic.creators.items.map(creator => creator.name)}
+//           />
+//         ))}
+//       </LastComics>
