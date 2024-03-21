@@ -1,4 +1,4 @@
-
+@import '../node_modules/modern-normalize/modern-normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
 
@@ -7,7 +7,7 @@
 body {
 
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-touch-callout: none;
@@ -58,3 +58,5 @@ ol,
 li {
   list-style: none;
 }
+
+

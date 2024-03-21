@@ -1,0 +1,99 @@
+.form {
+  gap: 16px;
+  width: 96%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.label {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.form > .label,
+.datePicker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.datePicker {
+  height: 76px;
+  grid-area: date;
+  width: 156px;
+}
+
+.dateInput {
+  width: 166px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+input::placeholder {
+  color: #fafafa;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.lableText {
+  color: #fafafa55;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.search,
+.dateInput {
+  color: inherit;
+
+  background-color: #34387f;
+  border: 1px solid #34387f;
+  border-radius: 100px;
+  padding: 16px 24px;
+
+  outline: none;
+}
+
+.dateInput {
+  background-color: transparent;
+  overflow: hidden;
+  color: #fafafa;
+  font-size: 16px;
+}
+
+.picker {
+  position: absolute;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  right: 10px;
+  bottom: 32%;
+  transform: translateY(50%);
+}
+
+.picker.active {
+  transform: rotate(180deg) translateY(-20%);
+}
+
+.icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 24px;
+  bottom: 20px;
+  cursor: pointer;
+
+  will-change: transform;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
