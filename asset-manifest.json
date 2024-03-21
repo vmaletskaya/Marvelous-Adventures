@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Marvelous-Adventures/static/css/main.eb60d7ab.css",
-    "main.js": "/Marvelous-Adventures/static/js/main.0919b4e8.js",
+    "main.css": "/Marvelous-Adventures/static/css/main.6eb8b4ff.css",
+    "main.js": "/Marvelous-Adventures/static/js/main.6c167164.js",
     "static/media/avengers-marvel 1.svg": "/Marvelous-Adventures/static/media/avengers-marvel 1.5a139fab5ea613f12b7f.svg",
     "static/media/pantera1.svg": "/Marvelous-Adventures/static/media/pantera1.112f8f4c77fb10e839ecb22b6a3503ca.svg",
     "static/media/pantera.svg": "/Marvelous-Adventures/static/media/pantera.2f3e58370067f1afc04cee25cb0d3258.svg",
@@ -13,11 +13,12 @@
     "static/media/arrow-left.svg": "/Marvelous-Adventures/static/media/arrow-left.e2b7725639d2e2c0889e563f8c0dfe64.svg",
     "static/media/search.svg": "/Marvelous-Adventures/static/media/search.5804bf024cba0fe3218b939b794871d2.svg",
     "static/media/fb.svg": "/Marvelous-Adventures/static/media/fb.83de927f1df117043a081c9d2ff12f49.svg",
-    "main.eb60d7ab.css.map": "/Marvelous-Adventures/static/css/main.eb60d7ab.css.map",
-    "main.0919b4e8.js.map": "/Marvelous-Adventures/static/js/main.0919b4e8.js.map"
+    "static/media/indicator.svg": "/Marvelous-Adventures/static/media/indicator.d791af46cd6528055368200d8a0f72e5.svg",
+    "main.6eb8b4ff.css.map": "/Marvelous-Adventures/static/css/main.6eb8b4ff.css.map",
+    "main.6c167164.js.map": "/Marvelous-Adventures/static/js/main.6c167164.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb60d7ab.css",
-    "static/js/main.0919b4e8.js"
+    "static/css/main.6eb8b4ff.css",
+    "static/js/main.6c167164.js"
   ]
 }
