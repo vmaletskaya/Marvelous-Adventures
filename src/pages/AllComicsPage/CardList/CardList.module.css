@@ -1,0 +1,36 @@
+.placeholder {
+    height: calc(477px - 64px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: #fafafa;
+
+    font-size: 24px;
+
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -0.48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 375px 221px;
+}
+
+.text {
+    max-width: 192px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 64px;
+    column-gap: 16px;
+    padding-top: 64px;
+    justify-content: center;
+    padding:56px 32px 0 32px;
+
+}
+

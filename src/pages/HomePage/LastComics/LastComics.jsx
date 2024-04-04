@@ -1,112 +1,116 @@
-import React, { useEffect, useState, useRef } from 'react';
-import ComicsCard from 'elements/ComicsCard/ComicsCard';
-import fetchComics from '../../../helpers/api';
-import BtnIcon1 from '../../../images/arrow-left.svg';
-import BtnIcon2 from '../../../images/arrow-right.svg';
+import { fetchLastComics } from '../../../services/api';
+import { useContext, useEffect, useRef, useState } from 'react';
 
-import css from './LastComics.module.css';
+import {
+  readFromLocalStorage,
+  writeToLocalStorage,
+} from '../../../helpers/LocalStotageApi';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
-const LastComics = ({ onItemClick }) => {
-  const [items, setItems] = useState([]);
-  const [showPrevButton, setShowPrevButton] = useState(true);
-  const [showNextButton, setShowNextButton] = useState(true);
-  const [visibleCards, setVisibleCards] = useState(3);
-  const comicsListRef = useRef(null);
+import { ReactComponent as ArrowL } from '../../../images/arrow-left.svg';
+import { ReactComponent as ArrowR } from '../../../images/arrow-right.svg';
+import { Mousewheel, Autoplay, FreeMode } from 'swiper/modules';
+
+import ComicsCard from '../../../elements/ComicsCard/ComicsCard';
+import css from '../LastComics/LastComics.module.css';
+import './LastComicsSlider.css';
+import { AnimationContext } from 'elements/Animations/AnimationContext';
+
+const LastComicsSlider = () => {
+  const [data, setData] = useState('');
+  const [isStartBtnActive, setStartBtnActive] = useState(true);
+  const [isEndBtnActive, setIsEndBtnActive] = useState(false);
+
+  const LastComicsSlider = useRef();
+
+  const animationState = useContext(AnimationContext);
 
   useEffect(() => {
-    fetchComics()
-      .then(data => {
-        const validComics = data.results.filter(comic => 
-          comic.thumbnail && 
-          comic.thumbnail.path && 
-          comic.thumbnail.extension && 
-          comic.title && 
-          comic.creators &&
-          comic.creators.items && 
-          comic.creators.items.length > 1 
-        );
-
-        const uniqueComics = validComics.reduce((acc, current) => {
-          const x = acc.find(item => item.id === current.id);
-          if (!x) {
-            return acc.concat([current]);
-          } else {
-            return acc;
-          }
-        }, []);
-
-        setItems(uniqueComics);
-      })
-      .catch(error => console.error(error));
+    if (!readFromLocalStorage('TopComics')) {
+      (async () => {
+        const data = await fetchLastComics();
+        setData(data.results);
+        writeToLocalStorage('TopComics', data);
+      })();
+    } else {
+      const data = readFromLocalStorage('TopComics');
+      setData(data.results);
+    }
   }, []);
 
-  useEffect(() => {
-    if (comicsListRef.current) {
-      const listWidth = comicsListRef.current.offsetWidth;
-      const cardWidth = comicsListRef.current.querySelector('.card')?.offsetWidth || 0;
-      setVisibleCards(Math.floor(listWidth / cardWidth)); 
-    }
-  }, [items]); 
 
-  const handleScroll = () => {
-    if (comicsListRef.current) {
-      const scrollLeft = comicsListRef.current.scrollLeft;
-      setShowPrevButton(scrollLeft > 0);
-      setShowNextButton(comicsListRef.current.scrollWidth - scrollLeft > comicsListRef.current.offsetWidth);
+  const handleClick = direction => {
+    switch (direction) {
+      case 'prev':
+        LastComicsSlider.current.swiper.slidePrev();
+        break;
+      case 'next':
+        LastComicsSlider.current.swiper.slideNext();
+        break;
+      default:
+        break;
     }
   };
 
-  const scroll = (direction) => {
-    if (comicsListRef.current) {
-      const scrollDistance = comicsListRef.current.offsetWidth / 2;
-      comicsListRef.current.scrollBy({
-        left: direction * scrollDistance,
-        behavior: 'smooth',
-      });
-    }
-  };
+  function isButtonActive(e) {
+    e.isBeginning ? setStartBtnActive(true) : setStartBtnActive(false);
+    e.isEnd ? setIsEndBtnActive(true) : setIsEndBtnActive(false);
+  }
+
+  if (LastComicsSlider.current) {
+    animationState
+      ? LastComicsSlider.current.swiper.autoplay.start()
+      : LastComicsSlider.current.swiper.autoplay.stop();
+  }
 
   return (
-    <div className={css.container}>
-      <h2 className={css.titleBlock}>Last Comics</h2>
-      <ul className={css.comicsList} onScroll={handleScroll} ref={comicsListRef}>
-        {items.slice(0, visibleCards).map((item, index) => (
-          <li key={item.id} className={css.cardContainer}>
-            <ComicsCard
-              image={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-              title={item.title}
-              authors={item.creators.items.map(creator => creator.name)}
-              onClick={() => onItemClick(item)}
-            />
-          </li>
-        ))}
-      </ul>
-      <div className={css.btnContainer}>
-        {showPrevButton && (
-          <div className={css.button} onClick={() => scroll(-1)}>
-            <img src={BtnIcon1} alt="Icon" className={css.BtnIcon} />
-          </div>
-        )}
-        {showNextButton && (
-          <div className={css.button} onClick={() => scroll(1)}>
-            <img src={BtnIcon2} alt="Icon" className={css.BtnIcon} />
-          </div>
-        )}
+    <div className="lastComics">
+      <h2 className={css.title}>Last Comics</h2>
+      <Swiper
+        containerModifierClass={'swiper-lastComics'}
+        slidesPerView={1.5}
+        spaceBetween={16}
+        speed={800}
+        ref={LastComicsSlider}
+        modules={[Autoplay, Mousewheel, FreeMode]}
+        effect={'slide'}
+        mousewheel={true}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        breakpoints={{
+          1440: {
+            cssWidthAndHeight: false,
+            freeMode: false,
+            sticky: true,
+            slidesPerView: 3,
+            spaceBetween: 16,
+          },
+        }}
+        onSlideChange={isButtonActive}
+      >
+        {data &&
+          data.map((card, i) => (
+            <SwiperSlide key={card.id}>
+              <ComicsCard card={card} size={'hero'} i={i} />
+            </SwiperSlide>
+          ))}
+      </Swiper>
+      <div className={css.LastComicsPaginations}>
+        <ArrowL
+          className={`${css.arrowL} ${isStartBtnActive && css.inactive}`}
+          onClick={() => handleClick('prev')}
+        />
+        <ArrowR
+          className={`${css.arrowR} ${isEndBtnActive && css.inactive}`}
+          onClick={() => handleClick('next')}
+        />
       </div>
     </div>
   );
 };
 
-export default LastComics;
-
-
-//  <LastComics>
-//         {comics.map(comic => (
-//           <ComicsCard
-//             key={comic.id}
-//             image={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-//             title={comic.title}
-//             authors={comic.creators.items.map(creator => creator.name)}
-//           />
-//         ))}
-//       </LastComics>
+export default LastComicsSlider;

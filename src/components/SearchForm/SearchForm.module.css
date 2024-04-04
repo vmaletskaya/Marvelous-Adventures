@@ -4,6 +4,7 @@
   padding: 0 20px;
   display: flex;
   justify-content: center;
+  margin-bottom: 64px;
 }
 
 .label {
@@ -51,7 +52,7 @@ input::placeholder {
 
 .search,
 .dateInput {
-  color: inherit;
+  color: #fafafa;
 
   background-color: #34387f;
   border: 1px solid #34387f;
@@ -70,30 +71,32 @@ input::placeholder {
 
 .picker {
   position: absolute;
-
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   right: 10px;
   bottom: 32%;
   transform: translateY(50%);
 }
 
 .picker.active {
-  transform: rotate(180deg) translateY(-20%);
+  transform: rotate(180deg) translateY(-10%);
 }
 
 .icon {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  right: 24px;
-  bottom: 20px;
-  cursor: pointer;
-
-  will-change: transform;
-  transition: transform 0.2s ease;
+    bottom: 20px;
+      cursor: pointer;
+      height: 18px;
+      position: absolute;
+      right: 24px;
+      transition: -webkit-transform .2s ease;
+      transition: transform .2s ease;
+      transition: transform .2s ease, -webkit-transform .2s ease;
+      width: 18px;
+      will-change: transform;
 }
 
 .icon:hover {
   transform: scale(1.2);
 }
+
+

@@ -1,27 +1,30 @@
 import { useEffect, useRef, useState } from 'react';
 import Select from 'react-select';
 import css from './SearchForm.module.css';
-import { ReactComponent as Search } from '../../images/search.svg';
+// import { ReactComponent as Search } from '../../images/search.svg';
 import { formatOpts, sortByOpts } from './formatOptions';
-import { isSpiderName, getObjFromParams, filteredQuery, resetDate } from '../../helpers';
+import {
+  isSpiderName,
+  getObjFromParams,
+  filteredQuery,
+  resetDate,
+  isEnglish,
+} from '../../helpers';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import { formatStyles } from './formatStyles'
+import { formatStyles } from './formatStyles';
 import { orderStyles } from './orderStyles';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './datePicker.css';
 import { ReactComponent as Picker } from './indicator.svg';
-// import { toast } from 'react-toastify';
 
 
 const SearchForm = ({ isSet, disabled }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const values = getObjFromParams(searchParams);
   const { state } = useLocation();
-    const [searchTerm, setSearchTerm] = useState('');
-    
 
-      const [searchQue, setSearchQue] = useState('');
+  const [searchQue, setSearchQue] = useState('');
 
   const [selectedFormat, setSelectedFormat] = useState(
     values.format
@@ -31,21 +34,25 @@ const SearchForm = ({ isSet, disabled }) => {
           )
         ]
       : formatOpts[0]
-    );
+  );
 
-
-     const [selectedOrder, setSelectedOrder] = useState(
+  const [selectedOrder, setSelectedOrder] = useState(
     values.orderBy
-      ? sortByOpts[sortByOpts.indexOf(sortByOpts.find(({ value }) => value === values.orderBy))]
+      ? sortByOpts[
+          sortByOpts.indexOf(
+            sortByOpts.find(({ value }) => value === values.orderBy)
+          )
+        ]
       : sortByOpts[0]
   );
-  const [startDate, setStartDate] = useState(values.startYear ? new Date(values.startYear) : null);
+  const [startDate, setStartDate] = useState(
+    values.startYear ? new Date(values.startYear) : null
+  );
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
-    const pickerRef = useRef();
-    
+  const pickerRef = useRef();
 
-      useEffect(() => {
+  useEffect(() => {
     setSearchQue(values.title ? values.title : state?.name ? state.name : '');
   }, [state?.name, values?.title]);
 
@@ -66,7 +73,7 @@ const SearchForm = ({ isSet, disabled }) => {
   });
 
   const onSubmit = () => {
-   
+    if (searchQue !== '') {
       const paramsObj = {
         orderBy: `${selectedOrder?.value}` || null,
         startYear: `${resetDate(startDate)}`,
@@ -75,24 +82,23 @@ const SearchForm = ({ isSet, disabled }) => {
       };
       setSearchParams(filteredQuery(paramsObj));
       isSet(prev => (prev += 1));
-
+    } else {
+      console.log();
+    }
   };
 
   function removeAtribute() {
     const select1 = document.querySelector('#select1 input');
-    const select2 = document.querySelector('#select2 input')
+    const select2 = document.querySelector('#select2 input');
     select1.removeAttribute('autocorrect');
     select2.removeAttribute('autocorrect');
-
   }
   setTimeout(() => {
     removeAtribute();
   }, 1500);
 
-
-
   return (
-    <form className={css.form}>
+    <form className={css.form} onClick={onSubmit}>
       <div className={css.label}>
         <p className={css.lableText}>Title Starts With</p>
         <input
@@ -100,11 +106,13 @@ const SearchForm = ({ isSet, disabled }) => {
           type="search"
           placeholder="Enter text"
           name="searchForm"
+          value={searchQue}
           required={true}
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
+          disabled={disabled}
+          title={searchQue}
+          onChange={e => setSearchQue(isEnglish(e.target.value))}
         />
-        {<Search className={css.icon} />}
+        {/* {<Search className={css.icon} onClick={onSubmit} />} */}
       </div>
       <div className={css.label}>
         <p className={css.lableText}>Format</p>
@@ -112,7 +120,7 @@ const SearchForm = ({ isSet, disabled }) => {
           defaultValue={selectedFormat}
           onChange={setSelectedFormat}
           options={formatOpts}
-            styles={formatStyles}
+          styles={formatStyles}
           id="select1"
         />
       </div>
@@ -128,7 +136,7 @@ const SearchForm = ({ isSet, disabled }) => {
       </div>
       <div className={css.label}>
         <p className={css.lableText}>Start Year</p>
-         <DatePicker
+        <DatePicker
           className={css.dateInput}
           wrapperClassName="datepicker"
           selected={startDate}
@@ -143,8 +151,8 @@ const SearchForm = ({ isSet, disabled }) => {
           isClearable
           placeholderText="Any date"
           dropdownMode="select"
-              />
-                <Picker
+        />
+        <Picker
           className={`${css.picker} ${isCalendarOpen && css.active}`}
           onClick={() => pickerRef.current.setOpen(true)}
         />
@@ -154,3 +162,5 @@ const SearchForm = ({ isSet, disabled }) => {
 };
 
 export default SearchForm;
+
+

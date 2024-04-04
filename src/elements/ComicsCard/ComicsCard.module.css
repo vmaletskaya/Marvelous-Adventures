@@ -1,20 +1,81 @@
-.image{
-    width: 448px;
-    height:519px;
-    border-radius: 8px;
+.card {
+  flex-grow: 1;
+  max-width: 346px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: all 0.17s ease-in-out;
+  background-color: transparent;
 }
 
-.title {
-    font-size: 24px;
-    color: #FAFAFA;
-    font-weight: 500;
+.card:hover {
+  filter: drop-shadow(0px 0px 3px rgb(131, 114, 198));
+  transform: translate3d(0, -20px, 0) !important;
 }
 
-.authors{
-    font-size: 18px;
-    color: #878484;
+.card:hover .cardImage {
+  box-shadow: 0 24px 20px -15px rgba(75, 23, 147, 0.773);
+  filter: drop-shadow(0px 0px 1px rgb(0, 0, 0));
 }
 
-.details{
-    padding-top: 16px;
+.cardImage {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+}
+
+.card.hero {
+  color: #fafafa;
+  max-width: none;
+  width: 448px;
+  height: 558px;
+}
+
+.hero {
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.hero > .cardImage {
+  height: 519px;
+
+  object-fit: cover;
+  object-position: top;
+}
+
+.cardBottomTab {
+  font-display: auto;
+  flex-direction: column;
+  text-align: left;
+
+  height: auto;
+}
+
+.cardTitle {
+  overflow: hidden;
+
+  font-size: 1.5em;
+  color: #fafafa;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: -0.48px;
+  white-space: nowrap;
+  max-width: 300px;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+.hero > .cardBottomTab > .cardTitle {
+  max-width: 430px;
+}
+
+.cardAuthor {
+  color: #a8a4a45a;
+  font-size: 16px;
+  line-height: 18px;
 }
