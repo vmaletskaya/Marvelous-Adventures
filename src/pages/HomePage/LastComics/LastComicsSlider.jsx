@@ -1,6 +1,6 @@
 import { fetchLastComics } from '../../../services/api';
 import { useContext, useEffect, useRef, useState } from 'react';
-
+import { ModalContext } from '../../../components/Modal/ModalContext/ModalContext';
 import {
   readFromLocalStorage,
   writeToLocalStorage,
@@ -15,7 +15,7 @@ import { Mousewheel, Autoplay, FreeMode } from 'swiper/modules';
 import ComicsCard from '../../../elements/ComicsCard/ComicsCard';
 import css from '../LastComics/LastComics.module.css';
 import './LastComicsSlider.css';
-import { AnimationContext } from 'elements/Animations/AnimationContext';
+import { AnimationContext } from '../../../elements/Animations/AnimationContext';
 
 const LastComicsSlider = () => {
   const [data, setData] = useState('');
@@ -23,7 +23,7 @@ const LastComicsSlider = () => {
   const [isEndBtnActive, setIsEndBtnActive] = useState(false);
 
   const LastComicsSlider = useRef();
-
+const { openModal} = useContext(ModalContext);
   const animationState = useContext(AnimationContext);
 
   useEffect(() => {
@@ -95,7 +95,7 @@ const LastComicsSlider = () => {
         {data &&
           data.map((card, i) => (
             <SwiperSlide key={card.id}>
-              <ComicsCard card={card} size={'hero'} i={i} />
+              <ComicsCard card={card} openModal={() => openModal(card.id)}  size={'hero'}  i={i} />
             </SwiperSlide>
           ))}
       </Swiper>

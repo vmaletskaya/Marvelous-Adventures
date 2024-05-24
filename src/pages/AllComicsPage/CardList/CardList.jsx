@@ -2,13 +2,13 @@ import { useSearchParams, useLocation } from 'react-router-dom';
 import ComicsCard from '../../../elements/ComicsCard/ComicsCard';
 import { fetchAllComics } from '../../../services/api';
 import css from './CardList.module.css';
-import { useEffect, useState, useRef } from 'react';
+import { useContext, useEffect, useState, useRef } from 'react';
 import { toast } from 'react-toastify';
 import PendingScreen from './PendingScreen';
 import EmptyContainerPlaceholder from './EmptyContainerPlaceholder';
 import LoadAnimation from '../../../elements/Animations/LoadAnimation';
 import PaginationComponent from '../../../components/Pagination/Pagination';
-
+import { ModalContext } from '../../../components/Modal/ModalContext/ModalContext';
 import getObjFromParams from '../../../helpers/getSearchParamsValues';
 
 import toastId from 'elements/Toasts/toastId';
@@ -18,13 +18,12 @@ import PendingToast from 'elements/Toasts/PendingToast';
 
 const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
   const { state } = useLocation();
-
+  const { openModal } = useContext(ModalContext);
   const isPageLoaded = useRef(false);
 
   window.addEventListener('offline', function () {
     setComics([]);
   });
- 
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [prevSearchState, setPrevSearchState] = useState();
@@ -32,8 +31,6 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
   const [comics, setComics] = useState(null);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
-
-
 
   const [page, setPage] = useState(0);
   const [clicked, setClicked] = useState(false);
@@ -106,8 +103,7 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
-  //  reload 
+  //  reload
   useEffect(() => {
     isPageLoaded.current = false;
     function handleBeforeUnload(e) {
@@ -119,7 +115,6 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
-
 
   // pagination
   useEffect(() => {
@@ -138,7 +133,6 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
         setError(error);
       }
     };
-  
 
     if (clicked) {
       const prevParams = getObjFromParams(searchParams);
@@ -167,15 +161,13 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
         },
       });
 
-     
       return;
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, clicked]);
 
-
-    //  search form
+  //  search form
   useEffect(() => {
     async function fetchPage(params) {
       setStatus('isPending');
@@ -220,13 +212,10 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
           toastId: toastId.error,
         },
       });
-      
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isFormSearch]);
-
-
 
   //  resize
   useEffect(() => {
@@ -273,12 +262,10 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
           toastId: toastId.error,
         },
       });
-      
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardLimit]);
-
 
   // search bar
   useEffect(() => {
@@ -337,7 +324,6 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
           toastId: toastId.error,
         },
       });
-     
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -350,10 +336,6 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
       setCurrentPage(comics?.offset / cardLimit);
     }
   }, [comics, cardLimit]);
-
-
-
- 
 
   if (status === 'isError') {
     return (
@@ -369,7 +351,13 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
         <div className={css.grid}>
           {comics && comics?.results?.length > 0 && !state?.name ? (
             comics.results.map((card, i) => (
-              <ComicsCard card={card} key={card.id} size={'basic'} i={i} />
+              <ComicsCard
+                card={card}
+                key={card.id}
+                openModal={() => openModal(card.id)}
+                size={'basic'}
+                i={i}
+              />
             ))
           ) : (
             <LoadAnimation>

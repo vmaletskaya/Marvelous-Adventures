@@ -8,7 +8,11 @@ const sizeList = {
 };
 
 export default function getImage(url, size) {
+  if (!url) {
+    return '';
+  }
+
   const { path, extension } = url;
 
-  return `${path}/${sizeList[size || "full_P"]}.${extension}`;
+  return `${path}/${sizeList[size || 'full_P']}.${extension}`;
 }

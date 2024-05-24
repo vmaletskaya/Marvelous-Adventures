@@ -1,0 +1,263 @@
+.modalCard {
+  width: 100%;
+  height: 842px;
+  margin: 0 auto;
+  background-color: #0c0b0b;
+  color: #fafafa;
+  border-radius: 8px;
+  position: relative;
+  padding: 64px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.characterCard {
+  width: 90%;
+}
+
+.notification{
+  font-size: 16px;
+  color: #fafafa;
+}
+
+.descriptionBlock {
+  width: calc(100% - (332px + 16px));
+  padding: 32px 16px;
+  background-color: #171717;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-height: 498px;
+  height: 770px;
+}
+
+.charactersImage,
+.creatorImage {
+  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  aspect-ratio: 1/1;
+  transition: all 0.12s ease-in-out;
+}
+
+.charactersListItem:hover .charactersImage {
+  transform: scale(1.2);
+}
+
+.charactersListItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  flex-direction: row;
+}
+
+.notification {
+  font-size: 16px;
+  color: #fafafa;
+}
+
+.characters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  column-gap: 16px;
+
+  height: 100%;
+}
+
+.creatorDescr {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.creatorCard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+}
+
+.modalTitle {
+  color: #fafafa;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.48px;
+}
+
+.modalTitle:not(:first-child) {
+  margin-top: 16px;
+}
+
+.modalText {
+  color: #fafafa;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.modalText > li:first-child {
+  margin-top: 16px;
+}
+
+.modalText > li:not(:last-child) {
+  margin-bottom: 0.6em;
+}
+
+/* About block */
+.aboutHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.authorDetailTitle {
+  display: flex;
+  gap: 8px;
+  color: #fafafa66;
+  position: relative;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.authorDetailTitle > li:first-child {
+  text-align: end;
+}
+
+/* Details block */
+.details {
+  display: flex;
+  gap: 32px;
+}
+
+.details > li {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.decoLine {
+  display: block;
+  width: 1px;
+  border: 1px solid #fafafa66;
+}
+
+.detailName {
+  color: #fafafa66;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+/* creators */
+.creatorsBlock,
+.characters {
+  margin-top: 16px;
+}
+
+.creatorsBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.creatorRole {
+  color: #fafafa66;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.creatorImage {
+  z-index: 1;
+  position: relative;
+}
+
+.creatorImage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+}
+
+/* Gallery */
+
+.img {
+  opacity: 1;
+  background-color: #171717;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.imgBG {
+  border-radius: 8px;
+  display: block;
+  background-color: #171717;
+  width: 100%;
+  height: auto;
+  flex-shrink: 0.7;
+}
+
+.imageGallery {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.photoBlock {
+  display: block;
+  gap: 8px;
+  width: 332px;
+}
+
+.imageGallery > li {
+  border-radius: 8px;
+  width: calc((100% - 3 * 8px) / 4);
+  aspect-ratio: 1/1;
+  height: auto;
+  overflow: hidden;
+  cursor: pointer;
+  text-wrap: pretty;
+}
+
+.galleryImage {
+  object-fit: contain;
+  transform: scale(1.8);
+  transition: all 0.12s ease-in-out;
+}
+
+.galleryImage:hover {
+  transform: scale(2);
+}
+
+/*  Charackters Modal */
+.cardList {
+  display: flex;
+  align-items: flex-start;
+  max-width: 556px;
+}

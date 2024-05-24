@@ -19,14 +19,14 @@ const Hero = () => {
           today.
         </p>
         <button className={css.heroBtn}>
-           <Link to="/all-comics" className={css.link}>All comics</Link> 
+           <Link to="/search" className={css.link}>All comics</Link> 
         </button>
       </article>
-      <div className={css.pagination}>
+      {/* <div className={css.pagination}>
         <div className={css.pageEl}></div>
         <div className={css.pageEl}></div>
         <div className={css.pageEl}></div>
-      </div>
+      </div> */}
 
       <div className={css.wrapperImg}>
         <img src={MarvelousHero} alt="Black Panther" className={css.heroImg1} />

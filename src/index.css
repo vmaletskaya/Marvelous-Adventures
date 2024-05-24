@@ -26,6 +26,13 @@ body {
   will-change: transform, scale;
 }
 
+#modal:has(div) {
+  position: sticky;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 165165165165165;
+}
  
 
 html::-webkit-scrollbar {

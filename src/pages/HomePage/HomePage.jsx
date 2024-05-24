@@ -1,12 +1,16 @@
+import LoadAnimation from '../../elements/Animations/LoadAnimation';
 import Hero from '../HomePage/Hero/Hero';
-import LastComics from './LastComics/LastComics';
+import LastComicsSlider from './LastComics/LastComicsSlider';
+
 
 const HomePage = () => {
   return (
-    <>
+    <LoadAnimation>
       <Hero />
-      <LastComics />
-    </>
+      <LastComicsSlider />
+      </LoadAnimation>
+    
+  
   );
 };
 

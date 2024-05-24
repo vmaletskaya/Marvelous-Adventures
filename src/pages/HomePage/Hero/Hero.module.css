@@ -104,7 +104,7 @@ height: 540px;
   top: 572px;
 }
 
-.pagination {
+/* .pagination {
   bottom: 0;
   top: 250px;
   display: flex;
@@ -117,7 +117,7 @@ height: 540px;
   transform: rotate(90deg) translateX(50%);
   width: 328px;
   z-index: 25;
-}
+} */
 
 .pageEl {
   background-color: #171717b3;

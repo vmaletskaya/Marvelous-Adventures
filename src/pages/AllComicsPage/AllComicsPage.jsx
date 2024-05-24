@@ -6,7 +6,7 @@ import LoadAnimation from '../../elements/Animations/LoadAnimation'
  import { AnimatePresence } from 'framer-motion';
 
 const AllComicsPage = props  => {
-       const [isChanged, setIsChanged] = useState(0);
+  const [isChanged, setIsChanged] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
     return (
         <LoadAnimation>
