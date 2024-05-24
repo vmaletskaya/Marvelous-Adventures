@@ -13,7 +13,6 @@ const CharacterModal = ({ id, closeModal }) => {
   const [comicsList, setComicsList] = useState(null);
   const [stories, setStories] = useState(null);
   const [height, setHeight] = useState(null);
-  const [status, setStatus] = useState('init');
   const { width } = useWindowResize();
   const descriptionBlock = useRef(null);
 
@@ -26,12 +25,12 @@ const CharacterModal = ({ id, closeModal }) => {
 
   useEffect(() => {
     (async () => {
-      setStatus('pending');
+    
       const { character, comicsList, stories } = await getCaracter(id);
       setCharacter(character);
       setComicsList(comicsList);
       setStories(stories);
-      setStatus('fulfilled');
+     
     })();
   }, [id]);
 

@@ -13,7 +13,6 @@ import getObjFromParams from '../../../helpers/getSearchParamsValues';
 
 import toastId from 'elements/Toasts/toastId';
 import ErrorToast from '../../../elements/Toasts/ErrorToast';
-import SuccessToast from '../../../elements/Toasts/SuccessToast';
 import PendingToast from 'elements/Toasts/PendingToast';
 
 const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
@@ -69,12 +68,6 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
             },
             icon: false,
             toastId: toastId.pending,
-          },
-          success: {
-            render() {
-              return <SuccessToast />;
-            },
-            toastId: toastId.success,
           },
 
           error: {
@@ -146,12 +139,7 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
           icon: false,
           toastId: toastId.pending,
         },
-        success: {
-          render() {
-            return <SuccessToast />;
-          },
-          toastId: toastId.success,
-        },
+      
         error: {
           render() {
             return <ErrorToast />;
@@ -198,12 +186,7 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
           icon: false,
           toastId: toastId.pending,
         },
-        success: {
-          render() {
-            return <SuccessToast />;
-          },
-          toastId: toastId.success,
-        },
+       
         error: {
           render() {
             return <ErrorToast />;
@@ -247,12 +230,7 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
           icon: false,
           toastId: toastId.pending,
         },
-        success: {
-          render() {
-            return <SuccessToast />;
-          },
-          toastId: toastId.success,
-        },
+       
 
         error: {
           render() {
@@ -309,12 +287,7 @@ const CardList = ({ cardLimit, isFormSearch, isFormDisabled }) => {
           icon: false,
           toastId: toastId.pending,
         },
-        success: {
-          render() {
-            return <SuccessToast />;
-          },
-          toastId: toastId.success,
-        },
+      
 
         error: {
           render() {

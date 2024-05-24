@@ -1,14 +1,11 @@
-// import hydra from '../../images/hydra.png';
-
 const ErrorToast = () => {
   return (
     <div style={styles.toastFlex}>
-       {/* <img style={styles.toastImg} src={hydra} alt="icon" /> */}
-      <p style={styles.toastText}>If They Cut Off One Head, Two More Shall Take Its Place.</p>
+      <p style={styles.toastText}>Something went wrong</p>
      
     </div>
   );
-};
+}; 
 
 export default ErrorToast;
 

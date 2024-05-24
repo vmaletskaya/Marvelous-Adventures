@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// import spinner from '../../images/spiner-4-toasts.gif';
 
 const PendingToast = () => {
   const [dots, setDots] = useState('');
@@ -24,7 +23,6 @@ const PendingToast = () => {
 
   return (
     <div style={styles.toastFlex}>
-      {/* <img style={styles.toastImg} src={spinner} alt="icon" /> */}
       <p style={styles.toastText}>{`Searching ${dots}`}</p>
     </div>
   );

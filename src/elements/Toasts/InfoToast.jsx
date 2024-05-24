@@ -1,10 +1,7 @@
-// import hulk from '../../images/hulk.png'
-
 const InfoToast = () => {
     return (
         <div style={styles.toastFlex}>
-           {/* <img style={styles.toastImg} src={hulk} alt="icon" /> */}
-          <p style={styles.toastText}>Please, search request... Hulk! Smash! ...</p>
+          <p style={styles.toastText}>Please, search request..</p>
          
         </div>
       );
