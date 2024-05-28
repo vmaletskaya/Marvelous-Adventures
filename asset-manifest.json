@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Marvelous-Adventures/static/css/main.8c4cfa9a.css",
-    "main.js": "/Marvelous-Adventures/static/js/main.12d65a9e.js",
-    "static/media/avengers-marvel 1.svg": "/Marvelous-Adventures/static/media/avengers-marvel 1.5a139fab5ea613f12b7f.svg",
-    "static/media/pantera1.svg": "/Marvelous-Adventures/static/media/pantera1.112f8f4c77fb10e839ecb22b6a3503ca.svg",
-    "static/media/pantera.svg": "/Marvelous-Adventures/static/media/pantera.2f3e58370067f1afc04cee25cb0d3258.svg",
-    "static/media/logo.svg": "/Marvelous-Adventures/static/media/logo.08685a15100a9fe35e161ab1f9f0360a.svg",
-    "static/media/inst.svg": "/Marvelous-Adventures/static/media/inst.5b896e47bc94dc053e5060b8cb0947c2.svg",
-    "index.html": "/Marvelous-Adventures/index.html",
-    "static/media/tw.svg": "/Marvelous-Adventures/static/media/tw.c30476f48cd5d5370dcff47070431df7.svg",
-    "static/media/arrow-right.svg": "/Marvelous-Adventures/static/media/arrow-right.a1ad0644a4a8cc97afaff9e70becd7bc.svg",
-    "static/media/arrow-left.svg": "/Marvelous-Adventures/static/media/arrow-left.fb4bb1b7d0fb31e6119bbf5bad15e840.svg",
-    "static/media/search.svg": "/Marvelous-Adventures/static/media/search.5804bf024cba0fe3218b939b794871d2.svg",
-    "static/media/fb.svg": "/Marvelous-Adventures/static/media/fb.83de927f1df117043a081c9d2ff12f49.svg",
-    "static/media/close.svg": "/Marvelous-Adventures/static/media/close.d3e18fa924d81215bc9262d69665be72.svg",
-    "static/media/indicator.svg": "/Marvelous-Adventures/static/media/indicator.d791af46cd6528055368200d8a0f72e5.svg",
-    "static/media/iconLeft.svg": "/Marvelous-Adventures/static/media/iconLeft.090c6356b12dd276e51ef85bb9010652.svg",
-    "static/media/iconRight.svg": "/Marvelous-Adventures/static/media/iconRight.a7a95f3a4101c8e3e2b3f52bec904f86.svg",
-    "main.8c4cfa9a.css.map": "/Marvelous-Adventures/static/css/main.8c4cfa9a.css.map",
-    "main.12d65a9e.js.map": "/Marvelous-Adventures/static/js/main.12d65a9e.js.map"
+    "main.css": "/static/css/main.88e9a80a.css",
+    "main.js": "/static/js/main.79c7f026.js",
+    "static/media/avengers-marvel 1.svg": "/static/media/avengers-marvel 1.5a139fab5ea613f12b7f.svg",
+    "static/media/pantera1.svg": "/static/media/pantera1.112f8f4c77fb10e839ecb22b6a3503ca.svg",
+    "static/media/pantera.svg": "/static/media/pantera.2f3e58370067f1afc04cee25cb0d3258.svg",
+    "static/media/logo.svg": "/static/media/logo.08685a15100a9fe35e161ab1f9f0360a.svg",
+    "static/media/inst.svg": "/static/media/inst.5b896e47bc94dc053e5060b8cb0947c2.svg",
+    "index.html": "/index.html",
+    "static/media/tw.svg": "/static/media/tw.c30476f48cd5d5370dcff47070431df7.svg",
+    "static/media/arrow-right.svg": "/static/media/arrow-right.a1ad0644a4a8cc97afaff9e70becd7bc.svg",
+    "static/media/arrow-left.svg": "/static/media/arrow-left.fb4bb1b7d0fb31e6119bbf5bad15e840.svg",
+    "static/media/search.svg": "/static/media/search.5804bf024cba0fe3218b939b794871d2.svg",
+    "static/media/fb.svg": "/static/media/fb.83de927f1df117043a081c9d2ff12f49.svg",
+    "static/media/close.svg": "/static/media/close.d3e18fa924d81215bc9262d69665be72.svg",
+    "static/media/indicator.svg": "/static/media/indicator.d791af46cd6528055368200d8a0f72e5.svg",
+    "static/media/iconLeft.svg": "/static/media/iconLeft.090c6356b12dd276e51ef85bb9010652.svg",
+    "static/media/iconRight.svg": "/static/media/iconRight.a7a95f3a4101c8e3e2b3f52bec904f86.svg",
+    "main.88e9a80a.css.map": "/static/css/main.88e9a80a.css.map",
+    "main.79c7f026.js.map": "/static/js/main.79c7f026.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c4cfa9a.css",
-    "static/js/main.12d65a9e.js"
+    "static/css/main.88e9a80a.css",
+    "static/js/main.79c7f026.js"
   ]
 }
