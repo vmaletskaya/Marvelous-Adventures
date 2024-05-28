@@ -1,79 +1,5 @@
-/* .titleBlock {
-  font-size: 44px;
-  color: #fafafa;
-  line-height: 44px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.container {
-  padding: 64px;
-  margin-top: 300px;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.titleBlock {
-  margin-bottom: 16px;
-}
-
-.cardContainer {
-  flex: 0 0 calc(33.33% - 16px);
-  margin-right: 16px;
-  max-width: calc(33.33% - 16px);
-}
-
-.comicsList {
-  margin-top: 64px;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding-bottom: 32px;
-}
-
-.comicsList::-webkit-scrollbar {
-  display: none;
-}
-
-.button {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  background-color: #34387f;
-  border: none;
-  cursor: pointer;
-  margin-right: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.button:is(:hover, :active) {
-  transform: scale(1.1);
-}
-
-.button:last-child {
-  margin-right: 0;
-}
-
-.btnContainer {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-}
-
-.button img {
-  width: 24px;
-  height: 24px;
-} */
-
-
 
 .title {
-  margin-top:380px;
   font-size: 44px;
   font-style: normal;
   font-weight: 500;
@@ -121,9 +47,8 @@
 .arrowR svg,
 .arrowL svg {
   width: 24px;
-  /* Устанавливаем новую ширину иконки */
   height: 24px;
-  /* Устанавливаем новую высоту иконки */
+
 }
 
 .arrowR:is(:hover, :active),

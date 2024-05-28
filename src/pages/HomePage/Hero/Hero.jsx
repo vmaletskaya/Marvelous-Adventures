@@ -22,11 +22,6 @@ const Hero = () => {
            <Link to="/search" className={css.link}>All comics</Link> 
         </button>
       </article>
-      {/* <div className={css.pagination}>
-        <div className={css.pageEl}></div>
-        <div className={css.pageEl}></div>
-        <div className={css.pageEl}></div>
-      </div> */}
 
       <div className={css.wrapperImg}>
         <img src={MarvelousHero} alt="Black Panther" className={css.heroImg1} />

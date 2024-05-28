@@ -66,7 +66,7 @@
   gap: 32px;
   justify-content: flex-end;
   height: 780px;
-}
+} 
 
 .heroImg {
   width: 352px;
@@ -75,7 +75,6 @@
 }
 
 .heroImg1 {
-  /* margin-top: 200px;  */
  align-self: flex-end; 
 height: 540px;
 }

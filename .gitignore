@@ -3,7 +3,7 @@
 #Junk
 .vscode/
 .idea/
-
+_redirects
 # dependencies
 /node_modules
 /.pnp
